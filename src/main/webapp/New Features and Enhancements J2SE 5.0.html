@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="startedWithEditor" content="Sat, 26 Nov 2016 16:19:55 GMT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>Java_Versions_01</title>
+
+<style type="text/css">
+<!--
+body {
+	color: #000000;
+	background-color: #FFFFFF;
+	background-image: url('Background Image');
+	background-repeat: no-repeat;
+}
+
+a {
+	color: #0000FF;
+}
+
+a:visited {
+	color: #800080;
+}
+
+a:hover {
+	color: #008000;
+}
+
+a:active {
+	color: #FF0000;
+}
+
+-->
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: green;
+	color: white;
+	padding-left: 50px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+label {
+	background-color: #AAAFAB;
+	border-radius: 5px;
+	padding: 3px;
+	padding-left: 25px;
+	color: white;
+}
+
+li {
+	margin: 1px;
+	padding: 1px;
+	border: 1px solid #ABC;
+	border-radius: 5px;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=checkbox] ~ ul {
+	max-height: 0;
+	max-width: 0;
+	opacity: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+input[type=checkbox]:checked ~ ul {
+	max-height: 100%;
+	max-width: 100%;
+	opacity: 1;
+}
+
+input[type=checkbox]+label:before {
+	transform-origin: 25% 50%;
+	border: 8px solid transparent;
+	border-width: 8px 12px;
+	border-left-color: white;
+	margin-left: -20px;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	text-align: center;
+	content: '';
+	color: #AAAFAB;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	position: absolute;
+	margin-top: 1px;
+}
+
+input[type=checkbox]:checked+label:before {
+	transform: rotate(90deg);
+}
+</style>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div style="overflow-x: auto;">
+		<table>
+			<col width="80" />
+			<col width="120" />
+			<col width="120" />
+			<col width="120" />
+			<tr>
+				<th>Java Language Features</th>
+				<th style="background-color: #00BFFF">Virtual Machine</th>
+				<th style="background-color: #00FF00">Base Libraries</th>
+				<th style="background-color: #E03510">Integration Libraries</th>
+			</tr>
+			<tr>
+				<td valign="top">
+					<ol type="1" id="java5LanguageFeaturesListId">
+						<li><a href="#id001">Generics</a></li>
+						<li><a href="#id002">Enhanced for Loop</a></li>
+						<li><a href="#id003">Autoboxing/Unboxing</a></li>
+						<li><a href="#id004">Typesafe Enums</a></li>
+						<li><a href="#id005">Varargs</a></li>
+						<li><a href="#id006">Static Import</a></li>
+						<li><a href="#id007">Metadata (Annotations)</a></li>
+					</ol>
+				</td>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id008">Class Data Sharing</a></li>
+						<li><a href="#id009">Garbage Collector Ergonomics</a></li>
+						<li><a href="#id0010">Server-Class Machine Detection</a></li>
+						<li><a href="#id0011">Thread Priority Changes</a></li>
+						<li><a href="#id0012">Fatal Error Handling</a></li>
+						<li><a href="#id0013">High-Precision Timing Support</a></li>
+					</ol>
+				</td>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id009">Lang and Util Packages</a></li>
+						<li><a href="#id0010">Networking</a></li>
+						<li><a href="#id0012">Security</a></li>
+						<li><a href="#id0013">Internationalization</a></li>
+						<li><a href="#id0014">Improved Support for Environment
+								Variables</a></li>
+						<li><a href="#id0015">ProcessBuilder</a></li>
+						<li><a href="#id0016">Formatter</a></li>
+						<li><a href="#id0017">Scanner</a></li>
+						<li><a href="#id0018">Reflection</a></li>
+						<li><a href="#id0019">JavaBeansTM Component Architecture</a></li>
+						<li><a href="#id0020">Collections Framework</a></li>
+						<li><a href="#id0021">Java API for XML Processing (JAXP)</a></li>
+						<li><a href="#id0022">Bit Manipulation Operations</a></li>
+						<li><a href="#id0023">Math</a></li>
+						<li><a href="#id0024">Instrumentation</a></li>
+						<li><a href="#id0025">Serialization</a></li>
+						<li><a href="#id0026">Concurrency Utilities</a></li>
+						<li><a href="#id0027">Threads</a></li>
+						<li><a href="#id0028">Monitoring and Management</a></li>
+					</ol>
+				</td>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id0029">Remote Method Invocation (RMI)</a></li>
+						<li><a href="#id0030">Java Database Connectivity (JDBC)</a></li>
+						<li><a href="#id0031">CORBA, Java IDL, and Java RMI-IIOP</a></li>
+						<li><a href="#id0032">Java Naming and Directory InterfaceTM (JNDI)</a></li>
+					</ol>
+				</td>
+
+			</tr>
+			<tr>
+				<th style="background-color: #00BFFF"">User Interface</th>
+				<th style="background-color: #00FF00">Deployment</th>
+				<th style="background-color: red">Tools and Tool Architecture</th>
+				<th>OS &amp; Hardware Platforms</th>
+			</tr>
+			<tr>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id0033">Internationalization</a></li>
+						<li><a href="#id0034">Java Sound Technology</a></li>
+						<li><a href="#id0035">Java 2DTM Technology</a></li>
+						<li><a href="#id0036">Image I/O</a></li>
+						<li><a href="#id0037">AWT</a></li>
+						<li><a href="#id0038">Swing</a></li>
+					</ol>
+				</td>
+
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id0039">General Deployment</a></li>
+						<li><a href="#id0040">Java Web Start</a></li>
+					</ol>
+				</td>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id0041">Java Virtual Machine Tool Interface (JVMTI)</a></li>
+						<li><a href="#id0042">Java Platform Debugger Architecture (JPDA)</a></li>
+						<li><a href="#id0043">Java Compiler (javac)</a></li>
+						<li><a href="#id0044">Javadoc Tool</a></li>
+						<li><a href="#id0045">Annotation Processing Tool (apt)</a></li>
+						<li><a href="#id0046">Java TM 2 Platform, Standard Edition 5.0 Trouble-Shooting
+							and Diagnostic Guide</a></li>
+					</ol>
+				</td>
+				<td valign="top">
+					<ol type="1">
+						<li><a href="#id0047">Supported System Configurations</a></li>
+						<li><a href="#id0048">64-Bit AMD Opteron Processors</a></li>
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+	<div class='genericClass' id=id001>
+		<h2><u>Generic </u></h2><br>
+						
+		Generics in Java Generics was added in Java 5 to provide compile-time
+		type checking and removing risk of ClassCastException that was common
+		while working with collection classes. The whole collection framework
+		was re-written to use generics for type-safety. Let’s see how generics
+		help us using collection classes safely.
+		<div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div>
+
+	</div>
+
+	<div class='genericClass' id=id002>
+		<h2><u>The enhanced for-loop</u></h2>
+		<p>
+			The enhanced for-loop is a popular feature introduced with the Java
+			SE platform in version 5.0. Its simple structure allows one to
+			simplify code by presenting for-loops that visit each element of an
+			array/collection without explicitly expressing how one goes from
+			element to element. Because the old style of coding didn't become
+			invalid with the new for-loop syntax, you don't have to use an
+			enhanced for-loop when visiting each element of an array/collection.
+			However, with the new style, one's code would typically change from
+			something like the following: <br>
+		<div style="padding-left: 10em">
+			for (int i=0; i &lt; array.length; i++) <br> &emsp;{ <br>
+			&emsp;&emsp;System.out.println("Element: " + array[i]); <br> 
+			&emsp;} <br> 
+			<h3>to the newer form for </h3><br> 
+			&emsp;(String element : array) <br>
+			&emsp;{<br>
+				&emsp;&emsp;System.out.println("Element: " + element); <br> 
+			&emsp;}<br>
+		</div>
+		
+		<div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div>
+		</p>
+	</div>
+
+	<div class='genericClass' id=id003>
+		<h2><u>Autoboxing and Unboxing</u></h2>
+		<p>
+			Autoboxing is the automatic conversion that the Java compiler makes
+			between the primitive types and their corresponding object wrapper
+			classes. For example, converting an int to an Integer, a double to a
+			Double, and so on. If the conversion goes the other way, this is
+			called unboxing. Here is the simplest example of autoboxing:
+
+			Character ch = 'a'; The rest of the examples in this section use
+			generics. If you are not yet familiar with the syntax of generics,
+			see the Generics (Updated) lesson. Consider the following code: List
+			<Integer> li = new ArrayList&lt;&gt;(); for (int i = 1; i
+			&lt; 50; i += 2) li.add(i); Although you add the int values as
+			primitive types, rather than Integer objects, to li, the code
+			compiles. Because li is a list of Integer objects, not a list of int
+			values, you may wonder why the Java compiler does not issue a
+			compile-time error. The compiler does not generate an error because
+			it creates an Integer object from i and adds the object to li. Thus,
+			the compiler converts the previous code to the following at runtime:
+			<div style="background-color: yellow">
+			List&lt;Integer&gt; li = new ArrayList&lt;&gt;();<br>
+			 for (int i = 1;i &lt; 50; i += 2)<br>
+			  li.add(Integer.valueOf(i)); <br>
+			</div>
+			
+		<div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div>
+		</p>
+	</div>
+
+	<div class='genericClass' id=id004>
+		<h2><u>Typesafe Enums</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id005>
+		<h2><u>Varargs</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id006>
+		<h2><u>Static Import</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id007>
+		<h2><u>Metadata (Annotations)</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id008>
+		<h2><u>Class Data Sharing</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id009>
+		<h2><u>Garbage Collector Ergonomics</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0010>		
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0011>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0012>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0013>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0014>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0015>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0016>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0018>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0019>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0020>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0021>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0022>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0023>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0024>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0025>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0026>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0027>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0028>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0029>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0030>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0031>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0032>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0033>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0034>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0035>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0036>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0037>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0038>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+
+	<div class='genericClass' id=id0017>
+		<h2><u>Server-Class Machine Detection</u></h2>
+		<p><div align="right" ><a  href="#java5LanguageFeaturesListId">back to topic</a></div></p>
+	</div>
+	
+</body>
+</html>
